@@ -1,0 +1,28 @@
+<h1>Tasks</h1>
+
+<p><%= link_to 'Add a New Task', new_task_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tip</th>
+      <th>Todolist</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.tip_id %></td>
+      <td><%= task.todolist_id %></td>
+      <td><%= link_to 'Show', task_url(task) %></td>
+      <td><%= link_to 'Edit', edit_task_url(task) %></td>
+      <td><%= link_to 'Destroy', task_url(task), method: 'delete', data: { confirm: "Do you really want to delete this task?" } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

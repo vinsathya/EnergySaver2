@@ -1,0 +1,36 @@
+<h1>Tips</h1>
+
+<p><%= link_to 'Add a New Tip', new_tip_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Room</th>
+      <th>Price</th>
+      <th>Savings</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @tips.each do |tip| %>
+    <tr>
+      <td><%= tip.user.name %></td>
+      <td><%= tip.title %></td>
+      <td><%= tip.description %></td>
+      <td><%= tip.room %></td>
+      <td><%= tip.price %></td>
+      <td><%= tip.savings %></td>
+      <td><%= link_to 'Show', tip_url(tip) %></td>
+      <td><%= link_to 'Edit', edit_tip_url(tip) %></td>
+      <td><%= link_to 'Destroy', tip_url(tip), method: 'delete', data: { confirm: "Do you really want to delete this tip?" } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

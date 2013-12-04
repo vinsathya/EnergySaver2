@@ -1,0 +1,17 @@
+<h1>Editing Task #<%= @task.id %></h1>
+
+<%= form_tag(task_url(@task), method: 'patch') do %>
+  <div>
+    <%= label_tag :tip_id %><br />
+    <%= select_tag :tip_id, options_from_collection_for_select(Tip.all, :id, :title, @task.tip_id), class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= label_tag :todolist_id %><br />
+    <%= select_tag :todolist_id, options_from_collection_for_select(Todolist.all, :id, :user_name, @task.todolist_id), class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= submit_tag "Update Task" %>
+  </div>
+<% end %>

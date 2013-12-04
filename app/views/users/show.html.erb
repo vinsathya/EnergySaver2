@@ -1,0 +1,23 @@
+<h1>User #<%= @user.id %></h1>
+
+<dl>
+  <dt>Firstname</dt>
+  <dd><%= @user.firstname %></dd>
+
+  <dt>Lastname</dt>
+  <dd><%= @user.lastname %></dd>
+
+</dl>
+
+
+<h1>To Do List</h1>
+<%= @user.todolist.inspect %>
+
+<h1>Tips</h1>
+<%= @user.tips.inspect %>
+
+<h1>Tasks</h1>
+<%= @user.tasks.inspect %>
+
+<h1>Todo Tips</h1>
+<%= @user.todo_tips.inspect %>

@@ -1,0 +1,17 @@
+<h1>New User</h1>
+
+<%= form_tag(users_url, method: 'post') do %>
+  <div>
+    <%= label_tag :firstname %><br />
+    <%= text_field_tag :firstname %>
+  </div>
+
+  <div>
+    <%= label_tag :lastname %><br />
+    <%= text_field_tag :lastname %>
+  </div>
+
+  <div>
+    <%= submit_tag "Create User" %>
+  </div>
+<% end %>

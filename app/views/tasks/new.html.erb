@@ -1,0 +1,19 @@
+<h1>New Task</h1>
+
+<%= form_tag(tasks_url, method: 'post') do %>
+  <div>
+    <%= label_tag :tip_id %><br />
+    <%= select_tag :tip_id, options_from_collection_for_select(Tip.all, :id, :title), class: 'form-control' %>
+  </div>
+
+<!-- select_tag :user_id, options_from_collection_for_select(User.all, :id, :name), class: 'form-control' -->
+
+  <div>
+    <%= label_tag :todolist_id %><br />
+    <%= select_tag :todolist_id, options_from_collection_for_select(Todolist.all, :id, :user_name), class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= submit_tag "Create Task" %>
+  </div>
+<% end %>

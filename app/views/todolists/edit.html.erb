@@ -1,0 +1,12 @@
+<h1>Editing Todolist #<%= @todolist.id %></h1>
+
+<%= form_tag(todolist_url(@todolist), method: 'patch') do %>
+  <div>
+    <%= label_tag :user_id %><br />
+    <%= select_tag :user_id, options_from_collection_for_select(User.all, :id, :name, @todolist.user_id), class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= submit_tag "Update Todolist" %>
+  </div>
+<% end %>

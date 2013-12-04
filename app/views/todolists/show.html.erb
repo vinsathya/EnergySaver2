@@ -1,0 +1,14 @@
+<h1>Todolist #<%= @todolist.id %></h1>
+
+<dl>
+  <dt>User</dt>
+  <dd><%= @todolist.user.name %></dd>
+
+<dl>
+  <dt>Tips</dt>
+  <% @todolist.tips.each do |tip| %>
+    <tr>
+      <dd><%= tip.title %></dd>
+  <% end %>
+
+</dl>

@@ -1,0 +1,26 @@
+<h1>Todolists</h1>
+
+<p><%= link_to 'Add a New Todolist', new_todolist_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @todolists.each do |todolist| %>
+    <tr>
+      <td><%= todolist.user_name %></td>
+      <td><%= link_to 'Show', todolist_url(todolist) %></td>
+      <td><%= link_to 'Edit', edit_todolist_url(todolist) %></td>
+      <td><%= link_to 'Destroy', todolist_url(todolist), method: 'delete', data: { confirm: "Do you really want to delete this todolist?" } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
